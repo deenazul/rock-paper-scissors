@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    background-color: #fbeee0;
+}
+.btns {
+    display: flex;
+    gap: 3rem;
+}
+h1 {
+    color: #422800;
+}
+#rock, #paper, #scissors {
+    background-color: #fbeee0;
+    border: 2px solid #422800;
+    border-radius: 15px;
+    box-shadow: #422800 4px 4px 0 0;
+    color: #422800;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 18px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+
+}
+
+#rock:hover, #paper:hover, #scissors:hover {
+background-color: aliceblue;
+}
