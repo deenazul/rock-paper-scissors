@@ -87,33 +87,4 @@ let playRound = (playerSelection, computerSelection) => {
         checkWinner(playerCount, computerCount);
     })
 
-let game = () => {
-
-    // for (let i = 0; i < 5 ; i++) {
-        // const playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
-        // playerSelection = getUserChoice();
-        // computerSelection = getComputerChoice();
-        // console.log(playRound(playerSelection, computerSelection));
-        // if (checkWinner(playerSelection, computerSelection) == "Player"){
-        //     playerCount++;
-        // }
-        // else if (checkWinner(playerSelection, computerSelection) == "Computer"){
-        //     computerCount++;
-        // }     
-    // }
-
-    console.log("Game over!")
-    // if (playerCount > computerCount) {
-    //     return "You win the game!"
-    // }
-    // else if (computerCount > playerCount) {
-    //     return "Computer wins the game!"
-    // }
-    // else {
-    //     return "It's a tie!"
-    // }
-};
-
-console.log(game());
-
 
