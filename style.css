@@ -1,26 +1,60 @@
 body {
-    display: flex;
-    flex-direction: column;
     margin: 2rem;
     background-color: #fbeee0;
+    font-family: 'Jua';
+    color: #4F200D;
+}
+.container {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+}
+.runningCount {
+    display: flex;
+    flex-direction: column;
+    background-color: #f3e4c5;
+    border: 2px solid #4F200D;
+    border-radius: 15px;
+    margin: 1rem;
+    inline-size: 350px;
+    justify-content: center;
+    align-items: center;
 }
 .btns {
     display: flex;
     gap: 3rem;
+    margin: 2rem 0rem 2rem 0rem;
 }
 h1 {
-    color: #422800;
+    font-size: 50px;
+    font-style: italic;
+}
+h2 {
+    margin-bottom: -0.5rem;
+    font-size: 38px;
+}
+h3 {
+    font-size: 20px;
+}
+.text {
+    color: #4F200D;
+}
+.result {
+    font-size: large;
+    justify-content: center;
+    align-items: center;
 }
 #rock, #paper, #scissors {
-    background-color: #fbeee0;
-    border: 2px solid #422800;
+    border: 2px solid #4F200D;
     border-radius: 15px;
-    box-shadow: #422800 4px 4px 0 0;
-    color: #422800;
+    box-shadow: #4F200D 4px 4px 0 0;
+    color: #4F200D;
     cursor: pointer;
     display: inline-block;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 20px;
+    font-family: 'Jua';
     padding: 0 18px;
     line-height: 50px;
     text-align: center;
@@ -28,7 +62,18 @@ h1 {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+}
 
+#rock {
+    background-color: #FF8400;
+}
+
+#paper {
+    background-color: #14FF00;
+}
+
+#scissors {
+    background-color: #FFD93D;
 }
 
 #rock:hover, #paper:hover, #scissors:hover {

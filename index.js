@@ -10,29 +10,30 @@ const runningCountContainer = document.querySelector('.runningCount');
 let playerCount = 0;
 let computerCount = 0;
 
-let getComputerChoice = (pick) => {
-    const choice = ["rock", "paper", "scissors"];
+let getComputerChoice= (pick) => {
+    const choice = ["Rock", "Paper", "Scissors"];
     pick = Math.floor(Math.random(choice) * choice.length);
     switch (pick) {
-        case 0: return "rock";
-        case 1: return "paper";
-        case 2: return "scissors";
+        case 0: return "Rock";
+        case 1: return "Paper";
+        case 2: return "Scissors";
     };
 };
     
 let checkWinner = (playerCount, computerCount) => {
-    console.log('player', playerCount, 'comp', computerCount);
    if (playerCount === 5){
     const h2 = document.createElement("h2");
     h2.classList.add("player-win");
-    h2.innerText = `You are the winner! You win ${playerCount} against ${computerCount}. Refresh the page to start again.`;
+    h2.innerText = `You are the winner! \nYou win ${playerCount} against ${computerCount}.`;
     result.appendChild(h2);
 } else if (computerCount === 5){
     const h2 = document.createElement("h2");
     h2.classList.add("computer-win");
-    h2.innerText = `Computer wins! It wins with ${computerCount} against you with ${playerCount}. Refresh the page to start again.`;
+    h2.innerText = `Computer wins! \nIt wins with ${computerCount} against you with ${playerCount}.`;
     result.appendChild(h2);
-} 
+} else if (playerCount > 5 || computerCount > 5){
+    location.reload();
+}
 }
 
 let runningCount = (playerCount, computerCount) => {
@@ -47,18 +48,18 @@ let playRound = (playerSelection, computerSelection) => {
         p.innerText = "Ties! Try again.";
         result.appendChild(p);
     }
-    else if ( (playerSelection === "rock" && computerSelection === "scissors") || 
-    (playerSelection === "paper" && computerSelection === "rock") || 
-    (playerSelection === "scissors" && computerSelection === "paper")) {
+    else if ( (playerSelection === "Rock" && computerSelection === "Scissors") || 
+    (playerSelection === "Paper" && computerSelection === "Rock") || 
+    (playerSelection === "Scissors" && computerSelection === "Paper")) {
         playerCount++;
         const p = document.createElement("p");
-        p.innerText = `You win! ${playerSelection} beats ${computerSelection}`;
+        p.innerText = `You win! ${playerSelection} beats ${computerSelection}.`;
         result.appendChild(p);
     }
     else {
         computerCount++;
         const p = document.createElement("p");
-        p.innerText = `Computer wins! ${computerSelection} beats ${playerSelection}`;
+        p.innerText = `Computer wins! ${computerSelection} beats ${playerSelection}.`;
         result.appendChild(p);
     }
 };
@@ -66,7 +67,7 @@ let playRound = (playerSelection, computerSelection) => {
 // create 3 buttons and call playRound with its correct playerSelection
     btnRock.addEventListener("click", () => {
         const computerSelection = getComputerChoice();
-        const playerSelection = "rock";
+        const playerSelection = "Rock";
         playRound(playerSelection, computerSelection);
         runningCount(playerCount, computerCount);
         checkWinner(playerCount, computerCount);
@@ -74,14 +75,14 @@ let playRound = (playerSelection, computerSelection) => {
     )
     btnPaper.addEventListener("click", () => {
         const computerSelection = getComputerChoice();
-        const playerSelection = "paper";
+        const playerSelection = "Paper";
         playRound(playerSelection, computerSelection);
         runningCount(playerCount, computerCount);
         checkWinner(playerCount, computerCount);
     })
     btnScissors.addEventListener("click", () => {
         const computerSelection = getComputerChoice();
-        const playerSelection = "scissors";
+        const playerSelection = "Scissors";
         playRound(playerSelection, computerSelection);
         runningCount(playerCount, computerCount);
         checkWinner(playerCount, computerCount);
