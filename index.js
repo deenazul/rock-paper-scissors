@@ -87,7 +87,3 @@ let playRound = (playerSelection, computerSelection) => {
         runningCount(playerCount, computerCount);
         checkWinner(playerCount, computerCount);
     })
-
-
-
-
